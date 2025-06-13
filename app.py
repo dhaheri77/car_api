@@ -26,8 +26,9 @@ def get_models():
     brand = request.args.get("brand")
     return jsonify(models_by_brand.get(brand, []))
 
-if __name__ == "__main__":
-    @app.route("/")
+@app.route('/')
 def index():
-    return "🚗 Car API is running. Use /api/countries to get started."
+    return jsonify({"message": "Car API is running!"})
+
+if __name__ == "__main__":
     app.run(debug=True)
