@@ -27,4 +27,7 @@ def get_models():
     return jsonify(models_by_brand.get(brand, []))
 
 if __name__ == "__main__":
+    @app.route("/")
+def index():
+    return "🚗 Car API is running. Use /api/countries to get started."
     app.run(debug=True)
